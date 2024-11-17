@@ -1,0 +1,47 @@
+<!--
+<p>main-page works!</p>
+<ol>
+  <li *ngFor="let producto of listaProductos">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.nombre}}</h5>
+        <p class="card-text">Cantidad: {{producto.stock}}</p>
+
+        <p class="card-text" *ngIf="producto.precioOferta! < producto.precio">
+          Precio: <s>{{producto.precio}}</s> {{producto.precioOferta}}
+        </p>
+
+        <p class="card-text" *ngIf="!producto.precioOferta">
+          Precio: {{producto.precio}}
+        </p>
+
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </li>
+</ol>   -->
+<div>
+  <div id="tabla de categorias">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let categoriaDTO of listaCategorias">
+        <td>{{ categoriaDTO.id }}</td>
+        <td>{{ categoriaDTO.nombreCategoria }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="navigateTo( 'Categoria/Actualizar/' + categoriaDTO.id )">Actualizar</button>
+          <button class="btn btn-danger"(click)="eliminarCategoria(categoriaDTO.id)">Eliminar</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-success" (click)="navigateTo('Categoria/Crear')">Agregar categoria</button>
+  </div>
+</div>
