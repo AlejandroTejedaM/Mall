@@ -1,0 +1,35 @@
+<div class="container">
+  <form (submit)="actualizarTienda()" [formGroup]="form">
+    <div class="col-4 form-group">
+      <label for="nombreTienda">Nombre de la tienda</label>
+      <input type="text" class="form-control" formControlName = "nombreTienda" id="nombreTienda">
+    </div>
+    <div class="col-4 form-group">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" formControlName = "direccion" id="direccion">
+    </div>
+    <div class="col-4 form-group">
+      <label for="latitud">Latitud</label>
+      <input type="number" class="form-control" formControlName = "latitud" id="latitud">
+    </div>
+    <div class="col-4 form-group">
+      <label for="longitud">Longitud</label>
+      <input type="number" class="form-control" formControlName = "longitud" id="longitud">
+    </div>
+    <div class="col-4 form-group">
+      <label for="telefono">Telefono</label>
+      <input type="text" class="form-control" formControlName = "telefono" id="telefono">
+    </div>
+    <div class="col-4 form-group">
+      <label for="idEncargado">Encargado</label>
+      <select class="form-control" formControlName="idEncargado" id="idEncargado">
+        <option *ngFor="let encargado of listaEncargados" [value]="encargado.id">
+          {{encargado.id}} | {{ encargado.nombre }} {{ encargado.apepat }} {{ encargado.apemat }} - {{encargado.rol}}
+      </select>
+    </div>
+    <div class="row mt-2 px-2">
+      <button type="submit" class="col-3 btn btn-primary" [disabled]="!form.valid">Guardar</button>
+      <button type="button" class="col-1 btn btn-danger" (click)="navigateTo('Tiendas')">Cancelar</button>
+    </div>
+  </form>
+</div>

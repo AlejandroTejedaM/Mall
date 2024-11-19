@@ -49,13 +49,16 @@ export class ActualizarCategoriaComponent implements OnInit{
     }
     const categoria = this.form.value;
     this.servicioCategoria.updateCategoria(categoria).subscribe(() => {
-      this.router.navigate(['/Categoria']);
+      this.router.navigate(['/Categorias']);
     });
   }
 
   ngOnInit(): void {
     this.id = parseInt(this.activatedRoute.snapshot.paramMap.get('id')!);
     this.loadCategoria(this.id);
+  }
 
+  navigateTo(categorias: string) {
+    this.router.navigate([categorias]);
   }
 }

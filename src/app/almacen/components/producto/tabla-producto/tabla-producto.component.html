@@ -1,0 +1,40 @@
+<!--
+<p>tabla-producto works!</p>
+export interface ProductoDTO {
+  id: number;
+  nombreProducto: string;
+  stock: number;
+  precio: number;
+  idCategoria : CategoriaDTO["id"];
+}
+-->
+<div>
+  <div id="tabla de productos">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Precio</th>
+        <th scope="col">IdCategoria</th>
+        <th scope="col">NombreCategoria</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let productoDTO of listaProductos">
+        <td>{{ productoDTO.nombreProducto }}</td>
+        <td>{{ productoDTO.stock }}</td>
+        <td>{{ productoDTO.precio }}</td>
+        <td>{{ productoDTO.idCategoria }}</td>
+        <td>{{ productoDTO.nombreCategoria }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="navigateTo( 'Productos/Actualizar/' + productoDTO.id )">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarProducto(productoDTO.id)">Eliminar</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-success" (click)="navigateTo('Productos/Crear')">Agregar producto</button>
+  </div>
+</div>

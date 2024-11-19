@@ -1,0 +1,33 @@
+<div class="container">
+  <form (submit)="actualizarProducto()" [formGroup]="form">
+    <div class="col-4 form-group">
+      <label for="nombreProducto">Nombre del producto</label>
+      <input type="text" class="form-control" formControlName = "nombreProducto" id="nombreProducto">
+    </div>
+    <div class="col-4 form-group">
+      <label for="stock">Stock</label>
+      <input type="number" class="form-control" formControlName = "stock" id="stock">
+    </div>
+    <div class="col-4 form-group">
+      <label for="precio">Precio</label>
+      <input type="number" class="form-control" formControlName = "precio" id="precio">
+    </div>
+    <div class="col-4 form-group">
+      <label for="idCategoria">Categoria</label>
+      <select class="form-control" formControlName="idCategoria" id="idCategoria">
+        <option *ngFor="let categoria of listaCategorias" [value]="categoria.id">
+          {{categoria.id}} | {{ categoria.nombreCategoria }}
+      </select>
+    </div>
+    <div class="row mt-2 px-2">
+      <button type="submit" class="col-3 btn btn-primary" [disabled]="!form.valid">Guardar</button>
+      <button type="button" class="col-1 btn btn-danger" (click)="navigateTo('Productos')">Cancelar</button>
+    </div>
+  </form>
+  <div *ngIf="mensajeError" class="alert alert-danger mt-2" role="alert">
+    {{mensajeError}}
+  </div>
+  <div *ngIf="mensajeExito" class="alert alert-success mt-2" role="alert">
+    {{mensajeExito}}
+  </div>
+</div>

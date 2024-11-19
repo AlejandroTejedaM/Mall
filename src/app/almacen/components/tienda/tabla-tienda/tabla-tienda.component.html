@@ -1,0 +1,36 @@
+<div>
+  <div id="tabla de tiendas">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Latitud</th>
+        <th scope="col">Longitud</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">IdEncargado</th>
+        <th scope="col">NombreEncargado</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tiendaDTO of listaTiendas">
+        <td>{{ tiendaDTO.nombreTienda }}</td>
+        <td>{{ tiendaDTO.direccion }}</td>
+        <td>{{ tiendaDTO.latitud }}</td>
+        <td>{{ tiendaDTO.longitud }}</td>
+        <td>{{ tiendaDTO.telefono }}</td>
+        <td>{{ tiendaDTO.idEncargado }}</td>
+        <td>{{ tiendaDTO.nombreEncargado }} {{ tiendaDTO.apematEncargado }} {{ tiendaDTO.apematEncargado }}</td>
+        <td>{{ tiendaDTO.correoEncargado }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="navigateTo( 'Tiendas/Actualizar/' + tiendaDTO.id )">Actualizar</button>
+          <button class="btn btn-danger" (click)="eliminarTienda(tiendaDTO.id)">Eliminar</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-success" (click)="navigateTo('Tiendas/Crear')">Agregar tienda</button>
+  </div>
+</div>

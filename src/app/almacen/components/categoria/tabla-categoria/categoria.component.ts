@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {AlmacenService} from '../../services/almacen.service';
-import {CategoriaDTO} from '../../interfaces/categorias.interface';
 import {Router} from '@angular/router';
+import {CategoriaDTO} from '../../../interfaces/categorias.interface';
+import {AlmacenService} from '../../../services/almacen.service';
 
 @Component({
-  selector: 'app-almacen-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+  selector: 'app-categoria',
+  templateUrl: './categoria.component.html',
+  styleUrl: './categoria.component.ts'
 })
-export class MainPageComponent implements OnInit {
+export class CategoriaComponent implements OnInit {
 
   listaCategorias: CategoriaDTO[] = [];
   router: Router;
