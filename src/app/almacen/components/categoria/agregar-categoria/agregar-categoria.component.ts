@@ -29,8 +29,11 @@ export class AgregarCategoriaComponent {
     }
     const categoria = this.form.value as CategoriaRequestDTO;
     this.servicioCategoria.addCategoria(categoria).subscribe(() => {
-      this.router.navigate(['/Categoria']);
+      this.router.navigate(['/Categorias']);
     });
   }
 
+  navigateTo(categorias: string) {
+    this.router.navigate([categorias]);
+  }
 }
