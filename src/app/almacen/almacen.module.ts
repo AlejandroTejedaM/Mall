@@ -13,6 +13,8 @@ import {ActualizarTiendaComponent} from './components/tienda/actualizar-tienda/a
 import { AgregarProductoComponent } from './components/producto/agregar-producto/agregar-producto.component';
 import { ActualizarProductoComponent } from './components/producto/actualizar-producto/actualizar-producto.component';
 import { TablaProductoComponent } from './components/producto/tabla-producto/tabla-producto.component';
+import { InputImgComponent } from './components/input-img/input-img.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,16 @@ import { TablaProductoComponent } from './components/producto/tabla-producto/tab
     ActualizarTiendaComponent,
     AgregarProductoComponent,
     ActualizarProductoComponent,
-    TablaProductoComponent
+    TablaProductoComponent,
+    InputImgComponent
   ],
   exports: [
     MainPageComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideHttpClient()

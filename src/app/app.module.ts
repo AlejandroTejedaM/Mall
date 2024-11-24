@@ -23,7 +23,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     AlmacenModule
   ],
   providers: [
-    provideFirebaseApp(() => initializeApp({"projectId":"socialraccoon-990a3","appId":"1:439486310444:web:ee215eb9ab5fe5d4648989","storageBucket":"socialraccoon-990a3.appspot.com","locationId":"us-central","apiKey":"AIzaSyAddxCWt72hRfDBOE32X9heo7R0n-nS_Rw","authDomain":"socialraccoon-990a3.firebaseapp.com","messagingSenderId":"439486310444","measurementId":"G-0FR522G0HY"})),
+    provideFirebaseApp(() => initializeApp({"projectId":"socialraccoon-990a3","appId":"1:439486310444:web:ee215eb9ab5fe5d4648989","storageBucket":"socialraccoon-990a3.appspot.com","apiKey":"AIzaSyAddxCWt72hRfDBOE32X9heo7R0n-nS_Rw","authDomain":"socialraccoon-990a3.firebaseapp.com","messagingSenderId":"439486310444","measurementId":"G-0FR522G0HY"})),
     provideStorage(() => getStorage())
   ],
   bootstrap: [AppComponent]

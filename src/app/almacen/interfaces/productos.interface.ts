@@ -14,4 +14,14 @@ export interface ProductoRequestDTO {
   stock: number;
   precio: number;
   idCategoria: CategoriaDTO["id"];
+  foto : File;
+}
+
+
+export interface ProductoRequestWithImageUrlDTO {
+  nombreProducto: string;
+  stock: number;
+  precio: number;
+  idCategoria: CategoriaDTO["id"];
+  imagen : string;
 }

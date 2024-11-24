@@ -1,0 +1,14 @@
+<h4>{{ label }}</h4>
+<div>
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    (click)="cargadorImagen.click()"> Cargar imagen
+  </button>
+  <input type="file" (change)="cambiarImagen($event)" hidden #cargadorImagen accept="image/*"/>
+</div>
+<div class="mt-2">
+  @if (imagenBase64) {
+    <img [src]="imagenBase64" alt="imagen" class="img-thumbnail" style="width: 200px; height: 200px;">
+  }
+</div>
