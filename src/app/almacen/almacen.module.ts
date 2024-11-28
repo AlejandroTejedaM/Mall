@@ -15,6 +15,7 @@ import { ActualizarProductoComponent } from './components/producto/actualizar-pr
 import { TablaProductoComponent } from './components/producto/tabla-producto/tabla-producto.component';
 import { InputImgComponent } from './components/input-img/input-img.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MapaComponent } from './components/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AgregarProductoComponent,
     ActualizarProductoComponent,
     TablaProductoComponent,
-    InputImgComponent
+    InputImgComponent,
+    MapaComponent
   ],
   exports: [
     MainPageComponent
